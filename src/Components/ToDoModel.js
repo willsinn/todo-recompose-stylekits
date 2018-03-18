@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { compose, withState, withHandlers } from 'recompose';
 
-class ToDoItem extends Component {
+class ToDoModel extends Component {
 
   const enhance = compose(
     withState('value', 'editValue', ''),
@@ -37,4 +37,4 @@ class ToDoItem extends Component {
   }
 }
 
-export default ToDoItem;
+export default ToDoModel;

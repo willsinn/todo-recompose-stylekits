@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { compose, withState, withHandlers, withProps } from 'recompose';
+import { compose, withState, withHandlers } from 'recompose';
 
-class Enhancers extends Component {
+class ToDoCounter extends Component {
 
   const enhance = compose(
-    withState('value', 'updateValue', ''),
+    withState('value', 'editValue', ''),
     withHandlers({
       onChange: props => event => {
         props.updateValue(event.target.value)
       },
       onSubmit: props => event => {
-        event.preventDefault()
+        event.preventDefault();
         submitForm(props.value)
       }
     })
@@ -24,16 +24,17 @@ class Enhancers extends Component {
     </form>
   )
 
+
+
   render() {
     return (
       <div>
-          <form onSubmit>
-              <input type="text" ref="title" placeholder="What's Next?"/>
-              <input type="submit" value="Submit" />
-          </form>
+        <button onClick={this.props.submitProjectAction}>
+          Submit
+        </button>
       </div>
     );
   }
 }
 
-export default InputBox;
+export default ToDoCounter;
