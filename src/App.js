@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import InputBox from './Components/InputBox';
+import ToDoItem from './Components/ToDoItem';
+import ToDoModel from './Components/ToDoModel';
+import TodoCounter from './Components/ToDoCounter';
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-        <ToDoModel />
-        <InputBox />
+        <TodoCounter />
+        <ToDoItem />
         <ToDoModel />
       </div>
     );
